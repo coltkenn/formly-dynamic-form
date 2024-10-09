@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
+import { jsonValidator } from '../validators/json.validator';
 
 @Component({
   selector: 'app-form-generator',
@@ -122,6 +123,12 @@ export class FormGeneratorComponent {
       },
       expressions: {
         hide: "!model.field_type"
+      },
+      validators: {
+        valid_json: {
+          expression: (c: AbstractControl) => jsonValidator(c),
+          message: 'Invalid JSON string.'
+        }
       }
     }
   ];
@@ -149,8 +156,6 @@ export class FormGeneratorComponent {
   // }
 
   addFieldToForm(): void {
-    console.log('test')
-    // console.log(this.form.controls);
     const field: FormlyFieldConfig = {
       key: this.form.controls['field_key'].value,
       type: this.form.controls['field_type'].value,

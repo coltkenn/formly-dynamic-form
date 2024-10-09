@@ -4,15 +4,18 @@
         <form role="form" novalidate [formGroup]="form">
             <formly-form [fields]="fields" [model]="model" [form]="form" [options]="options">
             </formly-form>
-            <button
-                mat-flat-button
-                class="add-field-to-form-button"
-                (click)="addFieldToForm()"
-                [disabled]="form.invalid"
-            >
-                Add to form
-            </button>
-            <button mat-flat-button (click)="generateForm()">Generate Form</button>
+            
+            <div class="form-actions">
+                <button
+                    mat-flat-button
+                    class="add-field-to-form-button"
+                    (click)="addFieldToForm()"
+                    [disabled]="form.invalid"
+                >
+                    Add to form
+                </button>
+                <button mat-flat-button (click)="generateForm()">Generate Form</button>
+            </div>
         </form>
         <!-- {{model | json}} -->
     </div>
