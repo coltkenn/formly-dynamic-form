@@ -1,0 +1,10 @@
+<div class="container">
+    <form role="form" novalidate [formGroup]="form">
+        <formly-form [fields]="fields" [model]="model" [form]="form" [options]="options">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </formly-form>
+    </form>
+    <button (click)="toggle()">Click me</button>
+    
+    {{model | json}}
+</div>

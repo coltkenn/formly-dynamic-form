@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="section">
+        <h6>Add form field</h6>
+        <form role="form" novalidate [formGroup]="form">
+            <formly-form [fields]="fields" [model]="model" [form]="form" [options]="options">
+            </formly-form>
+            <button
+                mat-flat-button
+                class="add-field-to-form-button"
+                (click)="addFieldToForm()"
+                [disabled]="form.invalid"
+            >
+                Add to form
+            </button>
+            <button mat-flat-button (click)="generateForm()">Generate Form</button>
+        </form>
+        <!-- {{model | json}} -->
+    </div>
+
+    @if (previewFields.length) {
+        <div class="section">
+            <h6>Form Preview</h6>
+            <form role="form" [formGroup]="formPreview">
+                <formly-form [fields]="previewFields" [model]="previewModel" [form]="formPreview" [options]="previewOptions">
+                </formly-form>
+                <!-- <button mat-flat-button (click)="addField()">Add to form</button> -->
+            </form>
+        </div>
+
+        <div class="section">
+            <h6>Json Viewer</h6>
+            <ngx-json-viewer [json]="previewFieldsJson"></ngx-json-viewer>
+        </div>
+    }
+</div>

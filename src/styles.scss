@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+    height: -webkit-fill-available;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mdc-button:disabled {
+    background-color: lightgray !important;
+    color: #FFFFFF !important;
+}

@@ -1,0 +1,12 @@
+<div class="container">
+    <legend *ngIf="props.label">{{ props.label }}</legend>
+    <p *ngIf="props.description">{{ props.description }}</p>
+
+    <div *ngFor="let field of field.fieldGroup; let i = index" class="row">
+      <formly-field [field]="field"></formly-field>
+      <button mat-mini-fab (click)="remove(i)" class="icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <button mat-flat-button class="add-button" (click)="add()">{{ props['addText'] }}</button>
+</div>

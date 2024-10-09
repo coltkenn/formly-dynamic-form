@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    margin: 5vw 100px 0;
+    justify-content: space-around;
+    padding: 5px;
+
+    .section {
+        border: 2px solid lightgray;
+        border-radius: 10px;
+        max-width: 25vw;
+        padding: 15px;
+        height: min-content;
+
+        .add-field-to-form-button {
+            margin-right: 10px;
+        }
+    }
+    
+    ::ng-deep {
+        .custom-class {
+                .mat-mdc-text-field-wrapper {
+                    // background-color: azure !important;
+                }
+        }
+    }
+}
